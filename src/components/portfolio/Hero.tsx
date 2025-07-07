@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
 import { ChevronDown, Download, Mail, Github, Linkedin, Twitter } from 'lucide-react';
@@ -26,38 +25,102 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated gradient background */}
+      {/* AI-powered interactive background */}
       <div 
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-40"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, 
-            rgba(139, 92, 246, 0.3) 0%, 
-            rgba(219, 39, 119, 0.2) 30%, 
-            rgba(59, 130, 246, 0.2) 60%, 
+            rgba(255, 255, 255, 0.08) 0%, 
+            rgba(128, 128, 128, 0.04) 30%, 
+            rgba(255, 255, 255, 0.02) 60%, 
             transparent 100%)`
         }}
       />
 
-      {/* Floating particles */}
+      {/* Neural network connections */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        <svg className="w-full h-full opacity-10" viewBox="0 0 1000 1000">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <motion.path
+            d="M100,200 Q300,100 500,200 T900,200"
+            stroke="rgba(255,255,255,0.3)"
+            strokeWidth="1"
+            fill="none"
+            filter="url(#glow)"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+          />
+          <motion.path
+            d="M200,400 Q400,300 600,400 T1000,400"
+            stroke="rgba(255,255,255,0.2)"
+            strokeWidth="1"
+            fill="none"
+            filter="url(#glow)"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+          />
+        </svg>
+      </div>
+
+      {/* AI Data Particles */}
+      <div className="absolute inset-0">
+        {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            className="absolute"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.8, 0.2],
+              y: [0, -40, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              opacity: [0.1, 0.6, 0.1],
+              scale: [0.8, 1.2, 0.8],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 4 + Math.random() * 3,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: Math.random() * 3,
             }}
-          />
+          >
+            <div className="w-1 h-1 bg-white/40 rounded-full">
+              <div className="absolute inset-0 w-3 h-3 border border-white/20 rounded-full -translate-x-1 -translate-y-1"></div>
+            </div>
+          </motion.div>
+        ))}
+        
+        {/* Binary data streams */}
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={`binary-${i}`}
+            className="absolute text-xs font-mono text-white/10 select-none"
+            initial={{
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: typeof window !== 'undefined' ? window.innerHeight : 1000,
+            }}
+            animate={{
+              y: -100,
+              opacity: [0, 0.5, 0],
+            }}
+            transition={{
+              duration: 8 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          >
+            {Array.from({ length: 10 }, () => Math.random() > 0.5 ? '1' : '0').join('')}
+          </motion.div>
         ))}
       </div>
 
@@ -74,7 +137,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-[#03B5AA]">
               Creative Technologist
             </span>
             <br />
@@ -82,7 +145,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p 
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -97,66 +160,80 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+          >
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-[#03B5AA] backdrop-blur-xl border border-[#03B5AA] hover:bg-[#03B5AA]/80 hover:border-[#03B5AA] text-white px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-500 shadow-2xl hover:shadow-[#03B5AA]/20 group"
               onClick={scrollToAbout}
             >
-              View My Work
-              <ChevronDown className="ml-2 w-5 h-5" />
+                <span>View My Work</span>
+                <ChevronDown className="ml-2 w-5 h-5 group-hover:rotate-180 transition-transform duration-300" />
             </Button>
+            </motion.div>
             
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
-            >
-              <Download className="mr-2 w-5 h-5" />
-              Download CV
+              className="bg-white/5 border-[#FF8552] text-white hover:bg-[#FF8552] hover:text-white hover:border-[#FF8552] px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-500 backdrop-blur-xl group"
+              >
+                <Download className="mr-2 w-5 h-5 group-hover:animate-bounce" />
+                <span>Download CV</span>
             </Button>
+            </motion.div>
           </motion.div>
 
+          {/* Social Links */}
           <motion.div 
             className="flex justify-center space-x-6 mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             {[
-              { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { icon: Twitter, href: '#', label: 'Twitter' },
-              { icon: Mail, href: '#contact', label: 'Email' },
-            ].map(({ icon: Icon, href, label }) => (
+              { Icon: Github, href: '#', label: 'GitHub' },
+              { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+              { Icon: Twitter, href: '#', label: 'Twitter' },
+              { Icon: Mail, href: 'mailto:contact@example.com', label: 'Email' },
+            ].map(({ Icon, href, label }) => (
               <motion.a
                 key={label}
                 href={href}
-                className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-110 group"
-                whileHover={{ y: -5 }}
+                className="p-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-[#03B5AA] hover:text-white hover:border-[#03B5AA] transition-all duration-300 group"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
                 aria-label={label}
               >
-                <Icon className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors" />
+                <Icon className="w-5 h-5" />
               </motion.a>
             ))}
           </motion.div>
         </motion.div>
+      </div>
 
+      {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <motion.button
-            onClick={scrollToAbout}
-            className="text-gray-400 hover:text-white transition-colors"
+        <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
+          className="flex flex-col items-center cursor-pointer group"
+          onClick={scrollToAbout}
           >
-            <ChevronDown className="w-8 h-8" />
-          </motion.button>
+          <span className="text-gray-400 text-sm mb-2 group-hover:text-[#FF8552] transition-colors">Scroll to explore</span>
+          <ChevronDown className="w-6 h-6 text-gray-400 group-hover:text-[#FF8552] transition-colors" />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

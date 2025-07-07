@@ -103,7 +103,7 @@ const Blog = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="text-[#03B5AA]">
               Latest Insights
             </span>
           </h2>
@@ -122,7 +122,7 @@ const Blog = () => {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <Card className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 border-purple-400/30 overflow-hidden hover:border-purple-400/50 transition-all duration-300 hover:scale-[1.02] group">
+            <Card className="bg-[#023436]/50 border-[#03B5AA]/30 overflow-hidden hover:border-[#03B5AA]/50 transition-all duration-300 hover:scale-[1.02] group">
               <div className="md:flex">
                 <div className="md:w-1/2">
                   <img 
@@ -133,7 +133,7 @@ const Blog = () => {
                 </div>
                 <div className="md:w-1/2 p-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                    <Badge className="bg-[#03B5AA] text-white">
                       Featured
                     </Badge>
                     <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">
@@ -141,7 +141,7 @@ const Blog = () => {
                     </Badge>
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-[#03B5AA] transition-colors">
                     {featuredPost.title}
                   </h3>
                   
@@ -162,14 +162,14 @@ const Blog = () => {
                   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {featuredPost.tags.slice(0, 3).map((tag) => (
-                      <Badge key={tag} variant="outline" className="border-purple-400/30 text-purple-300">
+                      <Badge key={tag} variant="outline" className="border-[#03B5AA]/30 text-[#03B5AA]">
                         <Tag className="w-3 h-3 mr-1" />
                         {tag}
                       </Badge>
                     ))}
                   </div>
                   
-                  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                  <Button className="bg-[#03B5AA] hover:bg-[#03B5AA]/80">
                     Read Full Article
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -197,7 +197,7 @@ const Blog = () => {
               whileHover={{ y: -10 }}
               className="group cursor-pointer"
             >
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:shadow-2xl h-full overflow-hidden">
+              <Card className="bg-[#080808]/40 backdrop-blur-sm border-white/10 hover:border-[#03B5AA]/50 transition-all duration-300 hover:shadow-2xl h-full overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img 
                     src={post.image} 
@@ -212,7 +212,7 @@ const Blog = () => {
                 </div>
                 
                 <CardHeader>
-                  <CardTitle className="text-white group-hover:text-purple-400 transition-colors line-clamp-2">
+                  <CardTitle className="text-white group-hover:text-[#03B5AA] transition-colors line-clamp-2">
                     {post.title}
                   </CardTitle>
                   <CardDescription className="text-gray-300 leading-relaxed line-clamp-3">
@@ -237,7 +237,7 @@ const Blog = () => {
                       <Badge 
                         key={tag} 
                         variant="outline" 
-                        className="border-purple-400/30 text-purple-300 text-xs"
+                        className="border-[#03B5AA]/30 text-[#03B5AA] text-xs"
                       >
                         {tag}
                       </Badge>
@@ -246,7 +246,7 @@ const Blog = () => {
                   
                   <Button 
                     variant="ghost" 
-                    className="w-full text-purple-400 hover:text-white hover:bg-purple-600/20 justify-between group"
+                    className="w-full text-[#03B5AA] hover:text-white hover:bg-[#03B5AA]/20 justify-between group"
                   >
                     Read More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -268,7 +268,7 @@ const Blog = () => {
           <Button 
             size="lg"
             variant="outline" 
-            className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+            className="border-[#03B5AA] text-[#03B5AA] hover:bg-[#03B5AA] hover:text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
           >
             <BookOpen className="w-5 h-5 mr-2" />
             View All Articles

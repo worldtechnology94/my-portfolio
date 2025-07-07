@@ -284,7 +284,6 @@ const Research = () => {
         </motion.div>
 
         {/* Research Impact Statement */}
-        // (Section removed as requested)
       </div>
     </section>
   );

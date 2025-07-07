@@ -54,7 +54,7 @@ const Index = () => {
         <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gray-400/10 to-transparent animate-pulse delay-1500"></div>
       </div>
 
-      <main className="relative z-10">
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />
         <About />
         <Experience />

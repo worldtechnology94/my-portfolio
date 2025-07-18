@@ -15,5 +15,5 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.PNG', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
-  base: "/synthwave-digital-bloom/", // <-- Add this line
+  base: "/my-portfolio/",
 });

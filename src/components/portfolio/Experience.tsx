@@ -25,8 +25,7 @@ const Experience = () => {
         'Managed complex technical challenges independently and collaboratively',
         'Communicated technical solutions clearly to diverse audiences'
       ],
-      technologies: ['Digital Learning Platforms', 'IT Training', 'Technical Support', 'Customer Service', 'Problem Solving'],
-      metrics: { students: '500+', satisfaction: '95%', projects: '12+' }
+      technologies: ['Digital Learning Platforms', 'IT Training', 'Technical Support', 'Customer Service', 'Problem Solving']
     },
     {
       id: 2,
@@ -45,8 +44,7 @@ const Experience = () => {
         'Introduced AI and data-driven concepts into curriculum for modern IT practices',
         'Led workshops on Electronic Circuits and practical implementations'
       ],
-      technologies: ['Computer Architecture', 'DBMS', 'Web Programming', 'Network Administration', 'Unix/Linux', 'AI Concepts'],
-      metrics: { courses: '8+', workshops: '15+', rating: '4.9/5' }
+      technologies: ['Computer Architecture', 'DBMS', 'Web Programming', 'Network Administration', 'Unix/Linux', 'AI Concepts']
     },
     {
       id: 3,
@@ -65,8 +63,7 @@ const Experience = () => {
         'Mentored teachers on modern educational technology integration',
         'Developed curriculum for practical computer science education'
       ],
-      technologies: ['Computer Lab Management', 'Mathematics', 'ICT Integration', 'Educational Technology', 'Curriculum Development'],
-      metrics: { students: '300+', workshops: '5+', impact: '100%' }
+      technologies: ['Computer Lab Management', 'Mathematics', 'ICT Integration', 'Educational Technology', 'Curriculum Development']
     },
     {
       id: 4,
@@ -85,8 +82,7 @@ const Experience = () => {
         'Built community of young tech enthusiasts and future developers',
         'Developed age-appropriate curriculum for teenage technology education'
       ],
-      technologies: ['Tech Entrepreneurship', 'Coding Bootcamps', 'Web Development', 'AI Education', 'Community Building'],
-      metrics: { bootcamps: '12+', graduates: '200+', success: '85%' }
+      technologies: ['Tech Entrepreneurship', 'Coding Bootcamps', 'Web Development', 'AI Education', 'Community Building']
     }
   ];
 
@@ -119,42 +115,7 @@ const Experience = () => {
     );
   };
 
-  // Animated metrics display
-  const AnimatedMetrics = ({ metrics, color, index }) => {
-    const metricItems = Object.entries(metrics);
-    
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: index * 0.1 }}
-        viewport={{ once: true }}
-        className="absolute top-4 right-4 z-20"
-      >
-        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-          <div className="grid grid-cols-1 gap-3">
-            {metricItems.map(([key, value], idx) => (
-              <motion.div
-                key={key}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 + idx * 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-center space-x-2"
-              >
-                <div 
-                  className="w-2 h-2 rounded-full" 
-                  style={{ backgroundColor: color }}
-                />
-                <span className="text-xs text-gray-300 capitalize">{key}:</span>
-                <span className="text-xs font-bold text-white">{value}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-    );
-  };
+
 
   // Geometric background patterns
   const GeometricPattern = ({ index, color }) => {
@@ -422,8 +383,6 @@ const Experience = () => {
                     </div>
 
                     <Card className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#03B5AA]/50 transition-all duration-500 hover:shadow-2xl group relative overflow-hidden">
-                      {/* Animated metrics display */}
-                      <AnimatedMetrics metrics={exp.metrics} color={exp.color} index={index} />
                       
                       <CardHeader className="pb-4 relative z-10">
                         <div className="flex items-start justify-between">

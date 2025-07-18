@@ -178,14 +178,21 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-white/5 border-[#FF8552] text-white hover:bg-[#FF8552] hover:text-white hover:border-[#FF8552] px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-500 backdrop-blur-xl group"
-              >
-                <Download className="mr-2 w-5 h-5 group-hover:animate-bounce" />
-                <span>Download CV</span>
-            </Button>
+            <a
+              href="https://drive.google.com/file/d/17i_BmBR0_M7kWWKZE8eF_xP3AOc7VQ1_/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-white/5 border-[#FF8552] text-white hover:bg-[#FF8552] hover:text-white hover:border-[#FF8552] px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-500 backdrop-blur-xl group"
+                >
+                  <Download className="mr-2 w-5 h-5 group-hover:animate-bounce" />
+                  <span>Download CV</span>
+              </Button>
+            </a>
             </motion.div>
           </motion.div>
 

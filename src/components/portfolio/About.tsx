@@ -42,6 +42,7 @@ const About = () => {
   ];
 
   const achievements = [
+    { icon: Award, title: 'Master\'s Degree', description: 'Computer Engineering (AI) with GPA: 4.30/4.5' },
     { icon: Award, title: 'First-Class Honors', description: 'Bachelor of Technology with GPA: 3.63/4' },
     { icon: Users, title: '300+ Students', description: 'Taught and mentored in IT and Mathematics' },
     { icon: Lightbulb, title: '8+ Years Experience', description: 'IT infrastructure, education, and AI research' },
@@ -115,8 +116,8 @@ const About = () => {
             </span>
           </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                I am a passionate AI researcher and computer engineer currently pursuing my Master's in Computer Engineering 
-                (Artificial Intelligence) at Inje University, South Korea. With 8+ years of experience in IT infrastructure, 
+                I am a passionate AI researcher and computer engineer who recently graduated with a Master's in Computer Engineering 
+                (Artificial Intelligence) from Inje University, South Korea, achieving a GPA of 4.30/4.5. With 8+ years of experience in IT infrastructure, 
                 education, and cutting-edge AI research, I specialize in developing intelligent systems that bridge technology 
                 and real-world applications.
           </p>

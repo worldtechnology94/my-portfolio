@@ -17,20 +17,21 @@ const Education = () => {
       institution: 'Inje University',
       location: 'South Korea',
       period: '2023 – 2025',
-      status: 'Current',
+      status: 'Completed',
       type: 'Graduate',
       icon: Brain,
       color: '#03B5AA',
       image: aiImage,
       highlights: [
-        'Conducting research in AI-powered food recognition and NLP-driven dietary assessment',
-        'Developing transformer-based architectures for food image recognition and nutrition analysis',
-        'Exploring intersection of quantum AI and nutrition to enhance computational models',
-        'Specializing in federated learning and privacy-preserving model training',
-        'Advanced coursework in neural networks, deep learning, and intelligent systems'
+        'Graduated with outstanding academic performance (GPA: 4.30/4.5)',
+        'Conducted research in AI-powered food recognition and NLP-driven dietary assessment',
+        'Developed transformer-based architectures for food image recognition and nutrition analysis',
+        'Explored intersection of quantum AI and nutrition to enhance computational models',
+        'Specialized in federated learning and privacy-preserving model training',
+        'Completed advanced coursework in neural networks, deep learning, and intelligent systems'
       ],
       technologies: ['AI Research', 'Machine Learning', 'Computer Vision', 'NLP', 'Federated Learning', 'Quantum AI'],
-      achievement: 'Research Focus: Smart Agriculture & Nutrition AI'
+      achievement: 'Graduated with GPA: 4.30/4.5 - Research Focus: Smart Agriculture & Nutrition AI'
     },
     {
       id: 2,
